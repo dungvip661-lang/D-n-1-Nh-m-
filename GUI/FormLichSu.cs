@@ -101,8 +101,9 @@ namespace DuAn1_Nhom4.GUI
                 MauSac = ct.MaCtspNavigation?.MaMauNavigation?.TenMau ?? "",
                 KichThuoc = ct.MaCtspNavigation?.MaKichThuocNavigation?.TenKichThuoc ?? "",
                 SoLuong = ct.SoLuong,
-                DonGia = ct.MaCtspNavigation?.DonGiaXuat ?? 0,
-                ThanhTien = ct.SoLuong * (ct.MaCtspNavigation?.DonGiaXuat ?? 0)
+                // Lấy giá bán từ chi tiết phiếu xuất
+                DonGia = ct.GiaBan,
+                ThanhTien = ct.SoLuong * ct.GiaBan
             }).ToList();
 
             dgvCt.Columns["STT"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -174,7 +175,7 @@ namespace DuAn1_Nhom4.GUI
 
         private void dgvPhieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // 1. Kiểm tra chỉ số dòng hợp lệ (tránh click vào tiêu đề cột hoặc vùng trống)
+            // 1. Kiểm tra chỉ số dòng hợp lệ
             if (e.RowIndex < 0 || e.RowIndex >= dgvPhieu.Rows.Count)
             {
                 return;
@@ -196,21 +197,24 @@ namespace DuAn1_Nhom4.GUI
 
                     if (pn != null)
                     {
-                        // Gọi hàm load chi tiết phiếu nhập lên dgvCt
                         LoadCTPN(maPN);
 
-                        // Hiển thị thông tin chung lên các Label
                         labelMaNV.Text = "Mã nhân viên: " + (pn.MaNvNavigation?.Id.ToString() ?? "N/A");
                         labelTenNV.Text = "Tên nhân viên: " + (pn.MaNvNavigation?.HoTen ?? "N/A");
                         labelNgayTao.Text = "Ngày tạo: " + pn.NgayNhap.ToString("dd/MM/yyyy");
                         labelTrangThai.Text = "Trạng thái: " + pn.TrangThaiThanhToan;
 
-                        // Tính tổng tiền phiếu nhập
                         var tongTien = _ctpn.GetAll()
                             .Where(x => x.MaPhieuNhap == maPN)
                             .Sum(x => x.SoLuong * x.DonGia);
 
                         labelTongTien.Text = "Tổng tiền: " + tongTien.ToString("N0") + " VNĐ";
+
+                        // Ẩn các label chỉ dành cho Phiếu xuất
+                        labelTenSP.Text = "";
+                        labelSoLuong.Text = "";
+                        labelDonGia.Text = "";
+                        labelLai.Text = "";
                     }
                 }
                 // --- TRƯỜNG HỢP XEM CHI TIẾT PHIẾU XUẤT ---
@@ -223,21 +227,37 @@ namespace DuAn1_Nhom4.GUI
 
                     if (px != null)
                     {
-                        // Gọi hàm load chi tiết phiếu xuất lên dgvCt
+                        var chiTiets = _ctpx.GetAll().Where(x => x.MaPhieuXuat == maPX).ToList();
                         LoadCTPX(maPX);
 
-                        // Hiển thị thông tin khách hàng lên các Label (Phiếu xuất dùng MaKh)
                         labelMaNV.Text = "Mã khách hàng: " + (px.MaKhNavigation?.MaKh.ToString() ?? "N/A");
                         labelTenNV.Text = "Tên khách hàng: " + (px.MaKhNavigation?.Ten ?? "N/A");
                         labelNgayTao.Text = "Ngày xuất: " + px.NgayXuat.ToString("dd/MM/yyyy");
                         labelTrangThai.Text = "Trạng thái: " + px.TrangThaiThanhToan;
 
-                        // Tính tổng tiền phiếu xuất (có kiểm tra đơn giá xuất null)
-                        var tongTien = _ctpx.GetAll()
-                            .Where(x => x.MaPhieuXuat == maPX)
-                            .Sum(x => x.SoLuong * (x.MaCtspNavigation?.DonGiaXuat ?? 0));
-
+                        var tongTien = chiTiets.Sum(x => x.SoLuong * x.GiaBan);
                         labelTongTien.Text = "Tổng tiền: " + tongTien.ToString("N0") + " VNĐ";
+
+                        // --- HIỂN THỊ THÊM THÔNG TIN SẢN PHẨM ---
+                        if (chiTiets.Any())
+                        {
+                            var ct = chiTiets.First(); // lấy sản phẩm đầu tiên
+
+                            labelTenSP.Text = "Tên sản phẩm: " + (ct.MaCtspNavigation?.MaSpNavigation?.TenSp ?? "N/A");
+                            labelSoLuong.Text = "Số lượng: " + ct.SoLuong;
+                            labelDonGia.Text = "Đơn giá: " + ct.GiaBan.ToString("N0") + " VNĐ";
+
+                            decimal giaNhap = ct.MaCtspNavigation?.DonGiaNhap ?? 0;
+                            if (giaNhap > 0)
+                            {
+                                decimal lai = ((ct.GiaBan / giaNhap) - 1) * 100;
+                                labelLai.Text = "Lãi: " + lai.ToString("N0") + "%";
+                            }
+                            else
+                            {
+                                labelLai.Text = "Lãi: N/A";
+                            }
+                        }
                     }
                 }
             }
@@ -246,6 +266,7 @@ namespace DuAn1_Nhom4.GUI
                 MessageBox.Show("Lỗi hiển thị chi tiết: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void btnTk_Click(object sender, EventArgs e)

@@ -52,6 +52,10 @@
             labelTrangThai = new Label();
             labelTongTien = new Label();
             panel1 = new Panel();
+            labelTenSP = new Label();
+            labelSoLuong = new Label();
+            labelDonGia = new Label();
+            labelLai = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPhieu).BeginInit();
             groupBox2.SuspendLayout();
@@ -229,7 +233,7 @@
             groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(2);
-            groupBox2.Size = new Size(1091, 12);
+            groupBox2.Size = new Size(1091, 196);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách sản phẩm";
@@ -248,7 +252,7 @@
             dgvCt.ReadOnly = true;
             dgvCt.RowHeadersWidth = 51;
             dgvCt.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCt.Size = new Size(1087, 0);
+            dgvCt.Size = new Size(1087, 173);
             dgvCt.TabIndex = 7;
             // 
             // sqlCommand1
@@ -298,7 +302,7 @@
             // 
             labelTrangThai.AutoSize = true;
             labelTrangThai.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
-            labelTrangThai.Location = new Point(34, 341);
+            labelTrangThai.Location = new Point(33, 346);
             labelTrangThai.Margin = new Padding(2, 0, 2, 0);
             labelTrangThai.Name = "labelTrangThai";
             labelTrangThai.Size = new Size(91, 23);
@@ -319,6 +323,10 @@
             // panel1
             // 
             panel1.BackColor = Color.AliceBlue;
+            panel1.Controls.Add(labelLai);
+            panel1.Controls.Add(labelDonGia);
+            panel1.Controls.Add(labelSoLuong);
+            panel1.Controls.Add(labelTenSP);
             panel1.Controls.Add(labelTongTien);
             panel1.Controls.Add(labelTrangThai);
             panel1.Controls.Add(labelNgayTao);
@@ -328,14 +336,58 @@
             panel1.Location = new Point(1091, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(376, 511);
+            panel1.Size = new Size(376, 695);
             panel1.TabIndex = 0;
+            // 
+            // labelTenSP
+            // 
+            labelTenSP.AutoSize = true;
+            labelTenSP.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
+            labelTenSP.Location = new Point(33, 427);
+            labelTenSP.Margin = new Padding(2, 0, 2, 0);
+            labelTenSP.Name = "labelTenSP";
+            labelTenSP.Size = new Size(116, 23);
+            labelTenSP.TabIndex = 7;
+            labelTenSP.Text = "Tên sản phẩm";
+            // 
+            // labelSoLuong
+            // 
+            labelSoLuong.AutoSize = true;
+            labelSoLuong.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
+            labelSoLuong.Location = new Point(33, 499);
+            labelSoLuong.Margin = new Padding(2, 0, 2, 0);
+            labelSoLuong.Name = "labelSoLuong";
+            labelSoLuong.Size = new Size(79, 23);
+            labelSoLuong.TabIndex = 8;
+            labelSoLuong.Text = "Số lượng";
+            // 
+            // labelDonGia
+            // 
+            labelDonGia.AutoSize = true;
+            labelDonGia.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
+            labelDonGia.Location = new Point(33, 578);
+            labelDonGia.Margin = new Padding(2, 0, 2, 0);
+            labelDonGia.Name = "labelDonGia";
+            labelDonGia.Size = new Size(70, 23);
+            labelDonGia.TabIndex = 9;
+            labelDonGia.Text = "Đơn giá";
+            // 
+            // labelLai
+            // 
+            labelLai.AutoSize = true;
+            labelLai.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
+            labelLai.Location = new Point(33, 639);
+            labelLai.Margin = new Padding(2, 0, 2, 0);
+            labelLai.Name = "labelLai";
+            labelLai.Size = new Size(31, 23);
+            labelLai.TabIndex = 10;
+            labelLai.Text = "Lãi";
             // 
             // FormLichSu
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1467, 511);
+            ClientSize = new Size(1467, 695);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(panel1);
@@ -378,5 +430,9 @@
         private ComboBox cbTrangthai;
         private Label label5;
         private ComboBox cbNgayloc;
+        private Label labelLai;
+        private Label labelDonGia;
+        private Label labelSoLuong;
+        private Label labelTenSP;
     }
 }

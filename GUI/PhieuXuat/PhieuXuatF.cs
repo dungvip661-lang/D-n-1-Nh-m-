@@ -33,8 +33,8 @@ namespace DuAn1_Nhom4.GUI
                 KichThuoc = sp.MaKichThuocNavigation?.TenKichThuoc,
                 SoLuong = sp.SoLuong,
                 DonGiaNhap = sp.DonGiaNhap,
-                // SỬA DÒNG NÀY ĐỂ TÍNH LÃI 20%
-                DonGiaXuat = sp.DonGiaNhap * 1.2m
+                // SỬA DÒNG NÀY ĐỂ TÍNH LÃI 15%
+                DonGiaXuat = sp.DonGiaNhap * 1.15m
             }).ToList();
 
             // --- GIỮ NGUYÊN CÁC DÒNG FORMAT BÊN DƯỚI ---
@@ -135,9 +135,9 @@ namespace DuAn1_Nhom4.GUI
                     .ToList();
 
             dtgGioHang.DataSource = list.Select((ct, index) => {
-                // Lấy giá nhập từ navigation property và tính giá xuất 1.2
+                // Lấy giá nhập từ navigation property và tính giá xuất 1.15
                 decimal giaNhap = ct.MaCtspNavigation?.DonGiaNhap ?? 0;
-                decimal giaBanHienTai = giaNhap * 1.2m;
+                decimal giaBanHienTai = giaNhap * 1.15m;
 
                 return new
                 {
