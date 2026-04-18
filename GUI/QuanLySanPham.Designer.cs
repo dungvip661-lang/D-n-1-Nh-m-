@@ -573,14 +573,14 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(597, 464);
+            dataGridView1.Location = new Point(496, 464);
             dataGridView1.Margin = new Padding(2);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(760, 219);
+            dataGridView1.Size = new Size(860, 219);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -598,14 +598,14 @@
             // 
             dgvMs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMs.Location = new Point(598, 2);
+            dgvMs.Location = new Point(498, 2);
             dgvMs.Margin = new Padding(2);
             dgvMs.MultiSelect = false;
             dgvMs.Name = "dgvMs";
             dgvMs.ReadOnly = true;
             dgvMs.RowHeadersWidth = 51;
             dgvMs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMs.Size = new Size(763, 219);
+            dgvMs.Size = new Size(863, 219);
             dgvMs.TabIndex = 1;
             dgvMs.CellClick += dgvMs_CellClick;
             dgvMs.CellContentClick += dgvMs_CellContentClick;
@@ -623,7 +623,7 @@
             groupBox4.Margin = new Padding(2);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(2);
-            groupBox4.Size = new Size(590, 219);
+            groupBox4.Size = new Size(489, 219);
             groupBox4.TabIndex = 0;
             groupBox4.TabStop = false;
             groupBox4.Text = "Màu Sắc";
@@ -633,7 +633,7 @@
             button1.BackColor = Color.PaleTurquoise;
             button1.Image = Properties.Resources.icons8_clean_30;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(410, 46);
+            button1.Location = new Point(347, 46);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(110, 30);
@@ -648,7 +648,7 @@
             btnDeleteMs.BackColor = Color.LightCoral;
             btnDeleteMs.Image = Properties.Resources.icons8_delete_302;
             btnDeleteMs.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDeleteMs.Location = new Point(335, 139);
+            btnDeleteMs.Location = new Point(294, 139);
             btnDeleteMs.Margin = new Padding(2);
             btnDeleteMs.Name = "btnDeleteMs";
             btnDeleteMs.Size = new Size(122, 30);
@@ -662,7 +662,7 @@
             btnEditMs.BackColor = Color.Khaki;
             btnEditMs.Image = Properties.Resources.icons8_edit_302;
             btnEditMs.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditMs.Location = new Point(201, 139);
+            btnEditMs.Location = new Point(155, 139);
             btnEditMs.Margin = new Padding(2);
             btnEditMs.Name = "btnEditMs";
             btnEditMs.Size = new Size(122, 30);
@@ -677,7 +677,7 @@
             btnAddMs.ForeColor = SystemColors.ButtonHighlight;
             btnAddMs.Image = Properties.Resources.icons8_add_303;
             btnAddMs.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddMs.Location = new Point(64, 139);
+            btnAddMs.Location = new Point(19, 139);
             btnAddMs.Margin = new Padding(2);
             btnAddMs.Name = "btnAddMs";
             btnAddMs.Size = new Size(122, 30);
@@ -689,7 +689,7 @@
             // txbMs
             // 
             txbMs.BorderStyle = BorderStyle.FixedSingle;
-            txbMs.Location = new Point(94, 50);
+            txbMs.Location = new Point(64, 50);
             txbMs.Margin = new Padding(2);
             txbMs.Name = "txbMs";
             txbMs.Size = new Size(247, 26);
@@ -708,7 +708,7 @@
             groupBox5.Margin = new Padding(2);
             groupBox5.Name = "groupBox5";
             groupBox5.Padding = new Padding(2);
-            groupBox5.Size = new Size(591, 219);
+            groupBox5.Size = new Size(490, 219);
             groupBox5.TabIndex = 0;
             groupBox5.TabStop = false;
             groupBox5.Text = "Tên Thương Hiệu";
@@ -718,7 +718,7 @@
             button3.BackColor = Color.PaleTurquoise;
             button3.Image = Properties.Resources.icons8_clean_30;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(410, 46);
+            button3.Location = new Point(348, 46);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(110, 30);
@@ -733,7 +733,7 @@
             button4.BackColor = Color.LightCoral;
             button4.Image = Properties.Resources.icons8_delete_302;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(335, 139);
+            button4.Location = new Point(295, 139);
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(122, 30);
@@ -747,7 +747,7 @@
             button5.BackColor = Color.Khaki;
             button5.Image = Properties.Resources.icons8_edit_302;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(201, 139);
+            button5.Location = new Point(156, 139);
             button5.Margin = new Padding(2);
             button5.Name = "button5";
             button5.Size = new Size(122, 30);
@@ -762,7 +762,7 @@
             button6.ForeColor = SystemColors.ButtonHighlight;
             button6.Image = Properties.Resources.icons8_add_303;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(64, 139);
+            button6.Location = new Point(20, 139);
             button6.Margin = new Padding(2);
             button6.Name = "button6";
             button6.Size = new Size(122, 30);
@@ -774,7 +774,7 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(94, 50);
+            textBox1.Location = new Point(65, 50);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(247, 26);
@@ -794,14 +794,14 @@
             // 
             dgvKt.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvKt.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKt.Location = new Point(597, 4);
+            dgvKt.Location = new Point(496, 4);
             dgvKt.Margin = new Padding(2);
             dgvKt.MultiSelect = false;
             dgvKt.Name = "dgvKt";
             dgvKt.ReadOnly = true;
             dgvKt.RowHeadersWidth = 51;
             dgvKt.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKt.Size = new Size(763, 219);
+            dgvKt.Size = new Size(860, 219);
             dgvKt.TabIndex = 1;
             dgvKt.CellClick += dgvKt_CellClick;
             dgvKt.CellContentClick += dgvKt_CellContentClick;
@@ -819,7 +819,7 @@
             groupBox3.Margin = new Padding(2);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(2);
-            groupBox3.Size = new Size(588, 219);
+            groupBox3.Size = new Size(487, 219);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Kích thước";
@@ -829,7 +829,7 @@
             button2.BackColor = Color.PaleTurquoise;
             button2.Image = Properties.Resources.icons8_clean_30;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(409, 50);
+            button2.Location = new Point(345, 50);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(110, 30);
@@ -844,7 +844,7 @@
             btnDeleteKt.BackColor = Color.LightCoral;
             btnDeleteKt.Image = Properties.Resources.icons8_delete_303;
             btnDeleteKt.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDeleteKt.Location = new Point(328, 142);
+            btnDeleteKt.Location = new Point(292, 142);
             btnDeleteKt.Margin = new Padding(2);
             btnDeleteKt.Name = "btnDeleteKt";
             btnDeleteKt.Size = new Size(122, 30);
@@ -858,7 +858,7 @@
             btnEditKt.BackColor = Color.Khaki;
             btnEditKt.Image = Properties.Resources.icons8_edit_301;
             btnEditKt.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditKt.Location = new Point(194, 142);
+            btnEditKt.Location = new Point(153, 142);
             btnEditKt.Margin = new Padding(2);
             btnEditKt.Name = "btnEditKt";
             btnEditKt.Size = new Size(122, 30);
@@ -873,7 +873,7 @@
             btnAddKt.ForeColor = SystemColors.ButtonHighlight;
             btnAddKt.Image = Properties.Resources.icons8_add_302;
             btnAddKt.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddKt.Location = new Point(59, 142);
+            btnAddKt.Location = new Point(17, 142);
             btnAddKt.Margin = new Padding(2);
             btnAddKt.Name = "btnAddKt";
             btnAddKt.Size = new Size(122, 30);
@@ -885,7 +885,7 @@
             // txbKt
             // 
             txbKt.BorderStyle = BorderStyle.FixedSingle;
-            txbKt.Location = new Point(94, 50);
+            txbKt.Location = new Point(62, 50);
             txbKt.Margin = new Padding(2);
             txbKt.Name = "txbKt";
             txbKt.Size = new Size(247, 26);

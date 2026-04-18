@@ -57,6 +57,16 @@ namespace DuAn1_Nhom4
                     x.MaSpNavigation.TrangThai
                 }).ToList();
             dtgThongTinSP.DataSource = ds;
+            dtgThongTinSP.Columns["MaCtsp"].HeaderText = "Mã chi tiết SP";
+            dtgThongTinSP.Columns["TenSp"].HeaderText = "Tên sản phẩm";
+            dtgThongTinSP.Columns["DonGiaNhap"].HeaderText = "Đơn giá nhập";
+            dtgThongTinSP.Columns["SoLuong"].HeaderText = "Số lượng";
+            dtgThongTinSP.Columns["TenKichThuoc"].HeaderText = "Kích thước";
+            dtgThongTinSP.Columns["TenThuongHieu"].HeaderText = "Thương hiệu";
+            dtgThongTinSP.Columns["TenMau"].HeaderText = "Màu sắc";
+            dtgThongTinSP.Columns["TenNcc"].HeaderText = "Nhà cung cấp";
+            dtgThongTinSP.Columns["TrangThai"].HeaderText = "Trạng thái";
+
         }
 
         private void LoadKt()
@@ -65,6 +75,9 @@ namespace DuAn1_Nhom4
             cbKichThuoc.DataSource = dskt;
             cbKichThuoc.DisplayMember = "TenKichThuoc";
             cbKichThuoc.ValueMember = "MaKichThuoc";
+            dgvKt.Columns["MaKichThuoc"].HeaderText = "Mã kích thước";
+            dgvKt.Columns["TenKichThuoc"].HeaderText = "Tên kích thước";
+
         }
 
         private void LoadMs()
@@ -73,6 +86,10 @@ namespace DuAn1_Nhom4
             cbMau.DataSource = dsMs;
             cbMau.DisplayMember = "TenMau";
             cbMau.ValueMember = "MaMau";
+            dgvMs.Columns["MaMau"].HeaderText = "Mã màu";
+            dgvMs.Columns["TenMau"].HeaderText = "Tên màu";
+
+
         }
         private void LoadTh()
         {
@@ -90,6 +107,9 @@ namespace DuAn1_Nhom4
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = dsThuongHieu;
+            dataGridView1.Columns["MaThuongHieu"].HeaderText = "Mã thương hiệu";
+            dataGridView1.Columns["TenThuongHieu"].HeaderText = "Tên thương hiệu";
+
         }
 
         private void LoadNcc()
@@ -391,6 +411,24 @@ namespace DuAn1_Nhom4
         private void btnLuuAddSP_Click(object sender, EventArgs e)
         {
             addSp();
+            
+            // Sau khi lưu xong thì tự động quay về trạng thái ban đầu
+            txtTen.ReadOnly = true;
+            txtDonGia.ReadOnly = true;
+            txtSoLuong.ReadOnly = true;
+
+            btnHuyLuu.Visible = false;
+            btnLuuEditSP.Visible = false;
+            btnLuuAddSP.Visible = false;
+
+            btnThem.Visible = true;
+            btnSua.Visible = true;
+            btnXoa.Visible = true;
+            btnLamMoi.Visible = true;
+
+            allowCellClick = true;
+
+            ThietLapCheDoChinhSua(false); // khóa lại toàn bộ khi xong
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -399,7 +437,26 @@ namespace DuAn1_Nhom4
         private void btnLuuEditSP_Click(object sender, EventArgs e)
         {
             editSp();
+
+            // Sau khi lưu xong thì tự động quay về trạng thái ban đầu
+            txtTen.ReadOnly = true;
+            txtDonGia.ReadOnly = true;
+            txtSoLuong.ReadOnly = true;
+
+            btnHuyLuu.Visible = false;
+            btnLuuEditSP.Visible = false;
+            btnLuuAddSP.Visible = false;
+
+            btnThem.Visible = true;
+            btnSua.Visible = true;
+            btnXoa.Visible = true;
+            btnLamMoi.Visible = true;
+
+            allowCellClick = true;
+
+            ThietLapCheDoChinhSua(false); // khóa lại toàn bộ khi xong
         }
+
         private void btnHuyLuu_Click(object sender, EventArgs e)
         {
             txtTen.ReadOnly = true;
@@ -736,16 +793,20 @@ namespace DuAn1_Nhom4
         }
         private void dgvMs_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var val = dgvMs.Rows[e.RowIndex].Cells["TenMau"].Value;
-            txbMs.Text = val != null ? val.ToString() : "";
+            if (e.RowIndex >= 0 && dgvMs.CurrentRow != null)
+            {
+                var val = dgvMs.Rows[e.RowIndex].Cells["TenMau"].Value;
+                txbMs.Text = val != null ? val.ToString() : "";
+            }
         }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var val = dataGridView1.Rows[e.RowIndex].Cells["TenThuongHieu"].Value;
-            textBox1.Text = val != null ? val.ToString() : "";
+            if (e.RowIndex >= 0 && dataGridView1.CurrentRow != null)
+            {
+                var val = dataGridView1.Rows[e.RowIndex].Cells["TenThuongHieu"].Value;
+                textBox1.Text = val != null ? val.ToString() : "";
+            }
         }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -896,4 +957,3 @@ namespace DuAn1_Nhom4
         }
     }
 }
-

@@ -111,12 +111,10 @@ namespace DuAn1_Nhom4.GUI.Nhập_hàng
         }
         private void dgvGioHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // 1. Kiểm tra nếu click vào header hoặc dòng trống
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0) return; // bỏ qua khi click header
 
             try
             {
-                // 2. Kiểm tra cột "MaCT" có tồn tại trong DataGridView không
                 if (dgvGioHang.Columns.Contains("MaCT"))
                 {
                     var cellValue = dgvGioHang.Rows[e.RowIndex].Cells["MaCT"].Value;
@@ -124,12 +122,6 @@ namespace DuAn1_Nhom4.GUI.Nhập_hàng
                     {
                         maCT = Convert.ToInt32(cellValue);
                     }
-                }
-                else
-                {
-                    // Nếu không tìm thấy tên cột MaCT, thử lấy theo index (cột thứ 2 sau STT là index 1)
-                    // Hoặc bạn có thể dùng dgvGioHang.Columns[e.ColumnIndex].Name để debug
-                    MessageBox.Show("Không tìm thấy cột định danh MaCT. Vui lòng kiểm tra lại thiết lập bảng.");
                 }
             }
             catch (Exception ex)
@@ -192,7 +184,6 @@ namespace DuAn1_Nhom4.GUI.Nhập_hàng
 
         private void LoadCTPN(int maPX)
         {
-            // 1. Get list
             var list = phieuNhapCtBLL.GetAll(
                    x => x.MaCtspNavigation.MaSpNavigation,
                    x => x.MaCtspNavigation.MaMauNavigation!,
@@ -202,14 +193,12 @@ namespace DuAn1_Nhom4.GUI.Nhập_hàng
                    .Where(x => x.MaPhieuNhap == maPX)
                    .ToList();
 
-            // 2. Clear old columns
             dgvGioHang.Columns.Clear();
 
-            // 3. Set DataSource
             dgvGioHang.DataSource = list.Select((ct, index) => new
             {
                 STT = index + 1,
-                MaCT = ct.MaPhieuCt,
+                MaCT = ct.MaPhieuCt,   // Đặt đúng tên MaCT
                 TenSP = ct.MaCtspNavigation?.MaSpNavigation?.TenSp ?? "",
                 MauSac = ct.MaCtspNavigation?.MaMauNavigation?.TenMau ?? "",
                 KichThuoc = ct.MaCtspNavigation?.MaKichThuocNavigation?.TenKichThuoc ?? "",
@@ -218,10 +207,6 @@ namespace DuAn1_Nhom4.GUI.Nhập_hàng
                 ThanhTien = (ct.SoLuong * (ct.MaCtspNavigation?.DonGiaNhap ?? 0)).ToString("N0") + "đ"
             }).ToList();
 
-            // 6. Tổng tiền
-            _tongTien = list.Sum(x => x.SoLuong * (x.MaCtspNavigation?.DonGiaNhap ?? 1));
-            lbTongTien.Text = "Tổng tiền: " + _tongTien.ToString("N0") + " VNĐ";
-
             dgvGioHang.Columns["MaCT"].HeaderText = "Mã chi tiết";
             dgvGioHang.Columns["TenSP"].HeaderText = "Tên sản phẩm";
             dgvGioHang.Columns["MauSac"].HeaderText = "Màu sắc";
@@ -229,11 +214,6 @@ namespace DuAn1_Nhom4.GUI.Nhập_hàng
             dgvGioHang.Columns["SoLuong"].HeaderText = "Số lượng";
             dgvGioHang.Columns["DonGia"].HeaderText = "Đơn giá";
             dgvGioHang.Columns["ThanhTien"].HeaderText = "Thành tiền";
-
-            foreach (DataGridViewColumn column in dgvGioHang.Columns)
-            {
-                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter; // Căn giữa tiêu đề cột
-            }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {

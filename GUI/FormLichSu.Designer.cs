@@ -52,10 +52,10 @@
             labelTrangThai = new Label();
             labelTongTien = new Label();
             panel1 = new Panel();
-            labelTenSP = new Label();
-            labelSoLuong = new Label();
-            labelDonGia = new Label();
             labelLai = new Label();
+            labelDonGia = new Label();
+            labelSoLuong = new Label();
+            labelTenSP = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPhieu).BeginInit();
             groupBox2.SuspendLayout();
@@ -93,7 +93,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(30, 132);
+            label5.Location = new Point(4, 131);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(65, 19);
@@ -103,7 +103,7 @@
             // cbNgayloc
             // 
             cbNgayloc.FormattingEnabled = true;
-            cbNgayloc.Location = new Point(112, 129);
+            cbNgayloc.Location = new Point(79, 127);
             cbNgayloc.Margin = new Padding(2);
             cbNgayloc.Name = "cbNgayloc";
             cbNgayloc.Size = new Size(155, 27);
@@ -113,7 +113,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(298, 69);
+            label4.Location = new Point(238, 76);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(72, 19);
@@ -124,7 +124,7 @@
             // 
             cbTrangthai.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTrangthai.FormattingEnabled = true;
-            cbTrangthai.Location = new Point(381, 67);
+            cbTrangthai.Location = new Point(314, 73);
             cbTrangthai.Margin = new Padding(2);
             cbTrangthai.Name = "cbTrangthai";
             cbTrangthai.Size = new Size(155, 27);
@@ -136,7 +136,7 @@
             btnTk.BackColor = Color.PaleTurquoise;
             btnTk.Image = Properties.Resources.icons8_view_30;
             btnTk.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTk.Location = new Point(821, 119);
+            btnTk.Location = new Point(704, 121);
             btnTk.Margin = new Padding(2);
             btnTk.Name = "btnTk";
             btnTk.Size = new Size(122, 37);
@@ -168,7 +168,7 @@
             // lbDenngay
             // 
             lbDenngay.AutoSize = true;
-            lbDenngay.Location = new Point(550, 127);
+            lbDenngay.Location = new Point(473, 131);
             lbDenngay.Margin = new Padding(2, 0, 2, 0);
             lbDenngay.Name = "lbDenngay";
             lbDenngay.Size = new Size(68, 19);
@@ -178,7 +178,7 @@
             // lbTungay
             // 
             lbTungay.AutoSize = true;
-            lbTungay.Location = new Point(297, 131);
+            lbTungay.Location = new Point(238, 130);
             lbTungay.Margin = new Padding(2, 0, 2, 0);
             lbTungay.Name = "lbTungay";
             lbTungay.Size = new Size(60, 19);
@@ -188,7 +188,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 67);
+            label1.Location = new Point(4, 79);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(74, 19);
@@ -198,7 +198,7 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(653, 127);
+            dateTimePicker2.Location = new Point(545, 127);
             dateTimePicker2.Margin = new Padding(2);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(155, 26);
@@ -207,7 +207,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(381, 127);
+            dateTimePicker1.Location = new Point(314, 127);
             dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(155, 26);
@@ -217,7 +217,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(112, 65);
+            comboBox1.Location = new Point(79, 73);
             comboBox1.Margin = new Padding(2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(155, 27);
@@ -339,27 +339,16 @@
             panel1.Size = new Size(376, 695);
             panel1.TabIndex = 0;
             // 
-            // labelTenSP
+            // labelLai
             // 
-            labelTenSP.AutoSize = true;
-            labelTenSP.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
-            labelTenSP.Location = new Point(33, 427);
-            labelTenSP.Margin = new Padding(2, 0, 2, 0);
-            labelTenSP.Name = "labelTenSP";
-            labelTenSP.Size = new Size(116, 23);
-            labelTenSP.TabIndex = 7;
-            labelTenSP.Text = "Tên sản phẩm";
-            // 
-            // labelSoLuong
-            // 
-            labelSoLuong.AutoSize = true;
-            labelSoLuong.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
-            labelSoLuong.Location = new Point(33, 499);
-            labelSoLuong.Margin = new Padding(2, 0, 2, 0);
-            labelSoLuong.Name = "labelSoLuong";
-            labelSoLuong.Size = new Size(79, 23);
-            labelSoLuong.TabIndex = 8;
-            labelSoLuong.Text = "Số lượng";
+            labelLai.AutoSize = true;
+            labelLai.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
+            labelLai.Location = new Point(33, 639);
+            labelLai.Margin = new Padding(2, 0, 2, 0);
+            labelLai.Name = "labelLai";
+            labelLai.Size = new Size(31, 23);
+            labelLai.TabIndex = 10;
+            labelLai.Text = "Lãi";
             // 
             // labelDonGia
             // 
@@ -372,16 +361,27 @@
             labelDonGia.TabIndex = 9;
             labelDonGia.Text = "Đơn giá";
             // 
-            // labelLai
+            // labelSoLuong
             // 
-            labelLai.AutoSize = true;
-            labelLai.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
-            labelLai.Location = new Point(33, 639);
-            labelLai.Margin = new Padding(2, 0, 2, 0);
-            labelLai.Name = "labelLai";
-            labelLai.Size = new Size(31, 23);
-            labelLai.TabIndex = 10;
-            labelLai.Text = "Lãi";
+            labelSoLuong.AutoSize = true;
+            labelSoLuong.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
+            labelSoLuong.Location = new Point(33, 499);
+            labelSoLuong.Margin = new Padding(2, 0, 2, 0);
+            labelSoLuong.Name = "labelSoLuong";
+            labelSoLuong.Size = new Size(79, 23);
+            labelSoLuong.TabIndex = 8;
+            labelSoLuong.Text = "Số lượng";
+            // 
+            // labelTenSP
+            // 
+            labelTenSP.AutoSize = true;
+            labelTenSP.Font = new Font("Segoe UI Semibold", 12.2F, FontStyle.Bold);
+            labelTenSP.Location = new Point(33, 427);
+            labelTenSP.Margin = new Padding(2, 0, 2, 0);
+            labelTenSP.Name = "labelTenSP";
+            labelTenSP.Size = new Size(116, 23);
+            labelTenSP.TabIndex = 7;
+            labelTenSP.Text = "Tên sản phẩm";
             // 
             // FormLichSu
             // 

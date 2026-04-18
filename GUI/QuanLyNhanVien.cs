@@ -49,8 +49,13 @@ namespace DuAn1_Nhom4.GUI
                 }).ToList();
 
             dataGridView1.DataSource = dsnv;
+            dataGridView1.Columns["STT"].HeaderText = "STT";
+            dataGridView1.Columns["Id"].HeaderText = "Mã nhân viên";
+            dataGridView1.Columns["HoTen"].HeaderText = "Họ tên";
+            dataGridView1.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
+            dataGridView1.Columns["Email"].HeaderText = "Email";
+            dataGridView1.Columns["TenChucVu"].HeaderText = "Tên chức vụ";
         }
-
         private void LoadCv()
         {
             var dsCv = cvBll.GetAll();
@@ -567,6 +572,13 @@ namespace DuAn1_Nhom4.GUI
 
                 dtgDanhSach.DataSource = null;
                 dtgDanhSach.DataSource = dsTk;
+                dtgDanhSach.Columns["STT"].HeaderText = "STT";
+                dtgDanhSach.Columns["Id"].HeaderText = "Mã tài khoản";
+                dtgDanhSach.Columns["NhanVienId"].HeaderText = "Mã nhân viên";
+                dtgDanhSach.Columns["HoTen"].HeaderText = "Họ tên";
+                dtgDanhSach.Columns["TenDangNhap"].HeaderText = "Tên đăng nhập";
+                dtgDanhSach.Columns["MatKhau"].HeaderText = "Mật khẩu";
+                dtgDanhSach.Columns["TrangThai"].HeaderText = "Trạng thái";
             }
             catch (Exception ex)
             {
